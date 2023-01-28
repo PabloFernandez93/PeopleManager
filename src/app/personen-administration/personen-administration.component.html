@@ -1,0 +1,27 @@
+<label for="name">Name: </label>
+<input type="text" placeholder="Enter your name" id="name" #name />
+
+<br />
+<br />
+
+<label for="age">Age: </label>
+<input type="number" placeholder="Enter your age" id="age" #age />
+
+<br />
+<br />
+
+<button class="save" (click)="saveNewPerson(name.value, 
++age.value)">
+  Save
+</button>
+
+<br />
+<br />
+
+<div class="newPerson" *ngFor="let person of people; 
+let i = index">
+  <h3>{{ i + 1 }}. Person</h3>
+  <p>Name: {{ person.name }}</p>
+  <p>Age: {{ person.age }}</p>
+  <button class="delete" (click)="deletePerson(i)">Delete</button>
+</div>
